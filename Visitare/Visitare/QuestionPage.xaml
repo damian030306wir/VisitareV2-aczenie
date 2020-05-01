@@ -23,7 +23,7 @@
         </StackLayout>
 
         <ListView ItemsSource="{Binding Answers}" ItemTapped="ListView_ItemTapped"  Margin="10,0">
-
+            
         </ListView>
 
     </StackLayout>

@@ -18,13 +18,30 @@ namespace Visitare
         {
             InitializeComponent();
             GetRoutes();
+            
         }
-        private async void GetRoutes()
+
+        
+        public async void GetRoutes()
         {
             HttpClient client = new HttpClient();
             var response = await client.GetStringAsync("http://dearjean.ddns.net:44301/api/Routes");
             var trasy = JsonConvert.DeserializeObject<List<Routes>>(response);
             routesList.ItemsSource = trasy;
+        }
+        private async void MethodSearchRoutes(object sender, TextChangedEventArgs e)
+        {
+            HttpClient client = new HttpClient();
+            var response = await client.GetStringAsync("http://dearjean.ddns.net:44301/api/Routes");
+            var trasy = JsonConvert.DeserializeObject<List<Routes>>(response);
+            routesList.ItemsSource = trasy;
+
+            var keyword = SearchRoutes.Text;
+            var result = trasy.Where(x => x.Name.ToLower().Contains(keyword.ToLower()));
+
+            routesList.ItemsSource = result;
+
+
         }
         private async void OnTapped(object sender, ItemTappedEventArgs e)
         {

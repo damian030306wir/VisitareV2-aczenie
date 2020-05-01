@@ -15,15 +15,13 @@ namespace Visitare
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CreatorPage : ContentPage
     {
+        
         public CreatorPage()
         {
             InitializeComponent();
             customMap.MoveToRegion(MapSpan.FromCenterAndRadius(new Position(53.010281, 18.604922), Distance.FromMiles(1.0)));
         }
-        private void OnNewRouteClicked(object sender, EventArgs e)
-        {
-
-        }
+       
         private void OnClearClicked(object sender, EventArgs e)
         {
             customMap.Pins.Clear();
@@ -74,5 +72,11 @@ namespace Visitare
             }
             
         }
+        private void OnNewRouteClicked(object sender, EventArgs e)
+        {
+           
+
+        }
+
     }
 }

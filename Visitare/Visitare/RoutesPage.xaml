@@ -11,6 +11,7 @@
     </NavigationPage.TitleView>
     <ContentPage.Content>
         <StackLayout>
+            <SearchBar x:Name="SearchRoutes" TextChanged="MethodSearchRoutes" HeightRequest="50"></SearchBar>
             <ListView x:Name="routesList"
                 HorizontalOptions="Center"  
                 VerticalOptions="Center"
