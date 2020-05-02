@@ -22,7 +22,7 @@ namespace Visitare
         }
 
         
-        public async void GetRoutes()
+        private async void GetRoutes()
         {
             HttpClient client = new HttpClient();
             var response = await client.GetStringAsync("http://dearjean.ddns.net:44301/api/Routes");
